@@ -13,7 +13,6 @@ namespace Module.BusinessSimulation.Model
             var count = 0.0f;
             var sizeX = (int)Mathf.Sqrt(Count);
             
-            Debug.Log(sizeX);
             foreach (var item in Items)
             {
                 SetPosition(item, new Vector2(

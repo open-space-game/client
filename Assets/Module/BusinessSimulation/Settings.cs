@@ -1,5 +1,6 @@
 using System;
 using Module.BusinessSimulation.Behaviour;
+using Module.BusinessSimulation.Builder;
 using Module.BusinessSimulation.Model;
 using Module.BusinessSimulation.Model.Setting;
 using UnityEngine;
@@ -10,33 +11,31 @@ namespace Module.BusinessSimulation
     {
         public Recipe[] Recipeis;
         public GridBench GridBench;
-        public GameObject BenchPrefab; 
+        public GameObject BenchPrefab;
+        private BenchBuilder BenchBuilder;
 
         public void Awake()
         {
             LoadSettings();
             InitGridBench();
+            InitBenchBuilder();
+        }
+
+        private void InitBenchBuilder()
+        {
+            BenchBuilder = new BenchBuilder();
+            BenchBuilder.BenchPrefab = BenchPrefab;
         }
 
         public void Start()
         {
             foreach (var recipe in Recipeis)
             {
-                var bench = loadBench(recipe);
+                var bench = BenchBuilder.create(recipe);
                 GridBench.Add(bench);
             }
 
             GridBench.Update();
-        }
-
-        private Bench loadBench(Recipe recipe)
-        {
-            var cube = Instantiate(BenchPrefab);
-            cube.name = $"bench_{recipe.id}";
-            var bench = cube.transform.GetComponent<Bench>();
-            bench.Recipe = recipe;
-            
-            return bench;
         }
 
         private void InitGridBench()
