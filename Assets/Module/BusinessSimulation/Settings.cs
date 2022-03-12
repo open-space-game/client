@@ -10,6 +10,7 @@ namespace Module.BusinessSimulation
     {
         public Recipe[] Recipeis;
         public GridBench GridBench;
+        public GameObject BenchPrefab; 
 
         public void Awake()
         {
@@ -21,16 +22,23 @@ namespace Module.BusinessSimulation
         {
             foreach (var recipe in Recipeis)
             {
-                GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                cube.name = $"item_{recipe.id}";
-                var bench = cube.AddComponent<Bench>();
-                bench.Recipe = recipe;
+                var bench = loadBench(recipe);
                 GridBench.Add(bench);
             }
 
             GridBench.Update();
         }
-        
+
+        private Bench loadBench(Recipe recipe)
+        {
+            var cube = Instantiate(BenchPrefab);
+            cube.name = $"bench_{recipe.id}";
+            var bench = cube.transform.GetComponent<Bench>();
+            bench.Recipe = recipe;
+            
+            return bench;
+        }
+
         private void InitGridBench()
         {
             GridBench = new GridBench();
