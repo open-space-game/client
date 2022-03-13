@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Module.BusinessSimulation.Model.Setting
 {
@@ -9,5 +11,6 @@ namespace Module.BusinessSimulation.Model.Setting
         public string type;
         public RecipeInfo info;
         public Stream[] streams;
+        public List<Stream> OutStreams => streams.Where(stream => stream.type == "out").ToList();
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Module.BusinessSimulation.Behaviour;
 using Module.BusinessSimulation.Builder;
 using Module.BusinessSimulation.Model;
@@ -41,7 +42,7 @@ namespace Module.BusinessSimulation
         private void InitGridBench()
         {
             GridBench = new GridBench();
-            GridBench.Scale = 5;
+            GridBench.Scale = 3;
         }
 
         private void LoadSettings()

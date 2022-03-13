@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4202935871296357922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9195988523263066965}
+  m_Layer: 0
+  m_Name: IconBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9195988523263066965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202935871296357922}
+  m_LocalRotation: {x: -0.44773895, y: -0, z: -0, w: 0.89416426}
+  m_LocalPosition: {x: 0, y: 0.59921706, z: -0.6435871}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_Children: []
+  m_Father: {fileID: 7926039812023341761}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -53.197, y: 0, z: 0}
 --- !u!1 &4402427013854254594
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +91,7 @@ Transform:
   - {fileID: 7926039812041625422}
   - {fileID: 8779435755729831645}
   - {fileID: 672760649212861159}
+  - {fileID: 9195988523263066965}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,6 +119,10 @@ MonoBehaviour:
       sizeBox: 0
       time: 0
     streams: []
+  IconPrefab: {fileID: 3470911910471541139, guid: 990b459c3ee8f274281da23e3e1c0d6c,
+    type: 3}
+  IconRepository: {fileID: 8585330320970025147, guid: def6289adaa5a5847adda6047688fee7,
+    type: 3}
 --- !u!1 &7926039812041625423
 GameObject:
   m_ObjectHideFlags: 0
